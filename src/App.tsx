@@ -39,7 +39,7 @@ function App() {
               Reset
             </button>
         }
-        <button disabled={!saved} className={`${btnStyle} bg-red-500`} onClick={toPDF}>
+        <button disabled={!saved} className={`${btnStyle} bg-red-500`} onClick={() => toPDF()}>
           Scarica PDF
         </button>
       </div>

@@ -1,9 +1,9 @@
 
-const Estimate = ({ setValues }) => {
+const Estimate = ({ setValues }: { setValues: (value: any) => void }) => {
 
     const inputStyle = "bg-white text-gray-600 focus:outline-none focus:border focus:border-[#40BF6C] w-fit text-sm h-7 px-2 border border-gray-300 rounded-lg"
 
-    const handleChange = e => setValues(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    const handleChange = (e: any) => setValues((prev: any) => ({ ...prev, [e.target.name]: e.target.value }))
 
     return (
         <div className="tracking-wide">

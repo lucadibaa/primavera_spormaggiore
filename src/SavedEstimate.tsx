@@ -1,7 +1,7 @@
 
-const SavedEstimate = ({ values }) => {
+const SavedEstimate = ({ values }: any) => {
 
-    const toEuropean = date => {
+    const toEuropean = (date: string) => {
         return date.replace(/-/g, ' / ').split(' ').reverse().join('')
     }
 
