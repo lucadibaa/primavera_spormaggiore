@@ -7,7 +7,7 @@ import SavedEstimate from './SavedEstimate';
 function App() {
 
   const { toPDF, targetRef } = usePDF({
-    filename: "usepdf-example.pdf",
+    filename: "preventivo.pdf",
     page: { margin: 1 }
   })
 
@@ -17,7 +17,7 @@ function App() {
   const btnStyle = 'tracking-wide whitespace-nowrap disabled:opacity-40 w-fit text-white rounded-lg py-2 px-4 text-xs uppercase shadow-xl hover:opacity-80'
 
   return (
-    <div className="flex justify-center items-center py-3 bg-[#cccccc] space-x-4">
+    <div className="w-full h-full flex justify-center items-center py-3 bg-[#cccccc] space-x-4 sm:flex-col sm:space-x-0 sm:space-y-4 sm:mx-2">
       <div ref={targetRef} className="w-[21cm] h-[29.7cm] bg-white shadow-[0_0_0.5cm_rgba(0,0,0,0.5)] rounded-sm px-8 py-4 space-y-5">
         <Banner />
         <hr />
