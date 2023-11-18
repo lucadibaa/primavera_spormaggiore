@@ -57,7 +57,19 @@ function App() {
               Salva
             </button>
             :
-            <button className={`${btnStyle} bg-white !text-gray-900`} onClick={() => { setSaved(false); setValues({}) }}>
+            <button className={`${btnStyle} bg-white !text-gray-900`} onClick={() => {
+              setSaved(false); setValues({
+                date: '',
+                guest: '',
+                dateFom: '',
+                dateTo: '',
+                nights: '',
+                adults: '',
+                children: '',
+                total: '',
+                deposit: '',
+              })
+            }}>
               Reset
             </button>
         }
