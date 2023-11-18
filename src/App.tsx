@@ -4,15 +4,37 @@ import Banner from './Banner';
 import Estimate from './Estimate';
 import SavedEstimate from './SavedEstimate';
 
+interface EstimateTypes {
+  date: string,
+  guest: string,
+  dateFom: string,
+  dateTo: string,
+  nights: string,
+  adults: string,
+  children: string,
+  total: string,
+  deposit: string,
+}
+
 function App() {
 
-  const { toPDF, targetRef } = usePDF({
-    filename: "preventivo.pdf",
-    page: { margin: 1 }
+  const [saved, setSaved] = useState(false)
+  const [values, setValues] = useState<EstimateTypes>({
+    date: '',
+    guest: '',
+    dateFom: '',
+    dateTo: '',
+    nights: '',
+    adults: '',
+    children: '',
+    total: '',
+    deposit: '',
   })
 
-  const [saved, setSaved] = useState(false)
-  const [values, setValues] = useState({})
+  const { toPDF, targetRef } = usePDF({
+    filename: `preventivo_${values?.guest.replace(/ /g, '_')}.pdf`,
+    page: { margin: 1 }
+  })
 
   const btnStyle = 'tracking-wide whitespace-nowrap disabled:opacity-40 w-fit text-white rounded-lg py-2 px-4 text-xs uppercase shadow-xl hover:opacity-80'
 
